@@ -1,0 +1,15 @@
+{
+  "name": "20210630-test-hardhat-etherspot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ming-der Wang",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.0.2",
+    "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "chai": "^4.3.4",
+    "ethereum-waffle": "^3.4.0",
+    "ethers": "^5.4.0",
+    "hardhat": "^2.4.1"
+  }
+}
