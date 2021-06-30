@@ -4,12 +4,14 @@ import "@nomiclabs/hardhat-web3";
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
-task("accounts", "Prints the list of accounts", async (args, hre) => {
+task("accounts", "👩🕵👨🙋👷 Prints the list of accounts", async (args, hre) => {
   const accounts = await hre.ethers.getSigners();
 
   for (const account of accounts) {
     console.log(await account.address);
   }
+console.log("👩🕵   👨🙋👷 these accounts only for localhost network.");
+  console.log('To see their private keys🔑🗝"  when you run "npx hardhat node"');
 });
 
 // You need to export an object to set up your config
