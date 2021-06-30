@@ -1,3 +1,6 @@
+// 03-etherspot.ts
+// refer to https://try.etherspot.dev/
+
 import { run, ethers, web3 } from "hardhat";
 import { Sdk } from 'etherspot';
 
@@ -13,6 +16,19 @@ sdk = new Sdk({
 });
 
 console.info('SDK created');
+// create session
+  const output = await sdk.createSession();
+
+  console.log('session object', output);
+  console.log('session graphql headers', {
+    ['x-auth-token']: output.token,
+  });
+// sign message
+const signature = await sdk.signMessage({
+    message: 'dolore ipsum exercitation sit aute sint anim est nisi aliqua',
+  });
+
+  console.log('signature', signature);
 }
 
 main()
