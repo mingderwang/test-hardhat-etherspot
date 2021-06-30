@@ -7,13 +7,17 @@
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
+    "@nomiclabs/hardhat-web3": "^2.0.0",
     "@types/chai": "^4.2.19",
     "@types/mocha": "^8.2.2",
     "@types/node": "^15.12.5",
     "chai": "^4.3.4",
     "ethereum-waffle": "^3.4.0",
     "ethers": "^5.4.0",
+    "etherspot": "^1.12.0",
     "hardhat": "^2.4.1",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.1.0",
     "ts-node": "^10.0.0",
     "typescript": "^4.3.4"
   }
