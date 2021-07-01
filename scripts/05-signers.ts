@@ -45,6 +45,9 @@ const signature = await signers[0]._signTypedData(domain, types, value);
 
 console.log(signer.address)
 console.log(signature)
+
+const g = await signer.getBalance()
+console.log(g.toString())
 }
 
 main()
