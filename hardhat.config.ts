@@ -1,13 +1,16 @@
+import * as dotenv from "dotenv";
+
 import { task } from "hardhat/config";
 import "@nomiclabs/hardhat-waffle";
 import "@nomiclabs/hardhat-web3";
-require("@nomiclabs/hardhat-etherscan");
-const { privateKey, infuraProjectId, etherscanApiKey } = require('./secrets.json');
+import "@nomiclabs/hardhat-etherscan";
+
+dotenv.config();
 
 //
 // Select the network you want to deploy to here:
 //
-const defaultNetwork = "rinkeby"; // test superfluid on rinkeby
+const defaultNetwork = "hardhat"; // test superfluid on rinkeby
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -29,7 +32,7 @@ export default {
   etherscan: {
     // Your API key for Etherscan
     // Obtain one at https://etherscan.io/
-    apiKey: etherscanApiKey
+    apiKey: process.env.ETHERSCANAPIKEY
   },
   networks: {
   	localhost: {
@@ -38,63 +41,63 @@ export default {
     hardhat: {
     },
     ropsten: {
-      url: "https://ropsten.infura.io/v3/" + infuraProjectId,
+      url: "https://ropsten.infura.io/v3/" + process.env.INFURAPROJECTID,
       chainId: 3,
       gasPrice: 20000000000,
       // accounts: {mnemonic: mnemonic}
-      accounts: [privateKey]
+      accounts: [process.env.PRIVATEKEY]
     },
     rinkeby: {
-      url: "https://rinkeby.infura.io/v3/" + infuraProjectId,
+      url: "https://rinkeby.infura.io/v3/" + process.env.INFURAPROJECTID,
       chainId: 4,
       gasPrice: 20000000000,
-      accounts: [privateKey]
+      accounts: [process.env.PRIVATEKEY]
     },
     goerli: {
-      url: "https://goerli.infura.io/v3/" + infuraProjectId,
+      url: "https://goerli.infura.io/v3/" + process.env.INFURAPROJECTID,
       chainId: 5,
       gasPrice: 20000000000,
-      accounts: [privateKey]
+      accounts: [process.env.PRIVATEKEY]
     },
     kovan: {
-      url: "https://kovan.infura.io/v3/" + infuraProjectId,
+      url: "https://kovan.infura.io/v3/" + process.env.INFURAPROJECTID,
       chainId: 42,
       gasPrice: 20000000000,
-      accounts: [privateKey]
+      accounts: [process.env.PRIVATEKEY]
     },
     bsc: {
       url: "https://bsc-dataseed.binance.org/",
       chainId: 56,
       gasPrice: 1000000000,
-      accounts: [privateKey]
+      accounts: [process.env.PRIVATEKEY]
     },
     bsctestnet: {
       url: "https://data-seed-prebsc-2-s3.binance.org:8545/",
       chainId: 97,
-      accounts: [privateKey]
+      accounts: [process.env.PRIVATEKEY]
     },
     poa: {
       url: "https://core.poanetwork.dev",
       chainId: 99,
       gasPrice: 1000000000,
-      accounts: [privateKey]
+      accounts: [process.env.PRIVATEKEY]
     },
     poasokol: {
       url: "https://sokol.poa.network",
       chainId: 77,
       gasPrice: 20000000000,
-      accounts: [privateKey]
+      accounts: [process.env.PRIVATEKEY]
     },
     xdai: {
       url: "https://dai.poa.network/",
       chainId: 100,
       gasPrice: 1000000000,
-      accounts: [privateKey]
+      accounts: [process.env.PRIVATEKEY]
     },
     matic: {
       url: 'https://rpc-mainnet.maticvigil.com/',
       gasPrice: 1000000000,
-      accounts: [privateKey]
+      accounts: [process.env.PRIVATEKEY]
     },
   },
     solidity: {
